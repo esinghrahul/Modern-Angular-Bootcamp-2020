@@ -1,0 +1,19 @@
+<div class="ui items" *ngFor="let listvalue of list">
+  <div class="item">
+    <div class="image">
+      <img [src] = "listvalue.image" />
+    </div>
+    <div class="content">
+      <a class="header">{{listvalue.title}}</a>
+      <div class="meta">
+        <span>Description</span>
+      </div>
+      <div class="description">
+        <p>{{listvalue.description}}</p>
+      </div>
+      <div class="extra">
+        {{listvalue.price | currency}}
+      </div>
+    </div>
+  </div>
+</div>

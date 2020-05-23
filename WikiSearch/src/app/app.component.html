@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="card">
+        <div class="card-title title" style="text-align:center">Wiki Scrapper</div>
+<app-search-bar (submitted) = "onTerm($event)"></app-search-bar>
+</div>
+<app-page-list *ngIf = "pages.length" [resultList] = 'pages'></app-page-list>
+</div> 

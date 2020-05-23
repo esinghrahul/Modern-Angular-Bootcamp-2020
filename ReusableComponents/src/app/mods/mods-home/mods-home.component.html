@@ -1,0 +1,10 @@
+<app-divider>Modal Component</app-divider>
+<button (click) = "onModalClick()">Show Modal</button>
+<app-modal (close)="onModalClick()" *ngIf="modalFlag">
+    <div modalTitle> This is a reusable header for a reusable modal window component</div>
+    <p>
+        This is reusable conent inside a reusable modal window with a reusable header.
+    </p>
+</app-modal>
+<app-divider>Accordion Component</app-divider>
+<app-accordion [accordionData] = "items"></app-accordion>

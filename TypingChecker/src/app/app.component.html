@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">{{title}}</h1>
+
+      <div class="field">
+        <p class="has-text-centered">
+          <span [class]="compare(letter, enteredText[i])" *ngFor="let letter of randomText.split(''); let i=index">{{letter}}</span>
+        </p>
+      </div>
+
+      <div class="field">
+        <!-- <input class="input" (input)="onChangeLength($event.target.value)" /> -->
+        <input type="text" class="input" (input)="OnTextChange($event.target.value)">
+      </div>
+
+      <div *ngIf="randomText === enteredText" class="box has-text-centered" >
+        <h1 class="title">Success!</h1>
+      </div>
+
+      <!-- <button [disabled]="
+          !(length && (includeLetters || includeSymbols || includeNumbers))
+        " (click)="onButtonClick()" class="button is-link is-fullwidth">
+        Generate!
+      </button> -->
+
+      <!-- <div class="box" *ngIf="password">
+        <label>Your Password</label>
+        <input class="input" [value]="password" />
+      </div> -->
+    </div>
+  </div>
+</div>

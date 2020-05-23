@@ -1,0 +1,31 @@
+<nav>
+  <ul class="pagination">
+    <li [appClass]="{ disabled: currentPage === 0 }" class="page-item">
+      <a (click)="currentPage = currentPage - 1" class="page-link">Prev</a>
+    </li>
+    <ng-container *ngFor="let image of images; let i = index">
+      <li
+        [ngClass]="{ active: i === currentPage }"
+        class="page-item"
+        *ngIf="checkWindowIndex(i)"
+      >
+        <a (click)="currentPage = i" class="page-link">{{ i + 1 }}</a>
+      </li>
+    </ng-container>
+    <li
+      [ngClass]="{ disabled: currentPage === images.length - 1 }"
+      class="page-item"
+    >
+      <a (click)="currentPage = currentPage + 1" class="page-link">Next</a>
+    </li>
+  </ul>
+</nav>
+
+<div>
+  <h4>{{ images[currentPage].title }}</h4>
+  <img [src]="images[currentPage].url" alt="" />
+</div>
+
+  <ul *appTimes = "4; let i= index">
+    {{i}}<li>Hi There! This is an example of custom structural directive replacing *ngFor directive</li>
+  </ul>

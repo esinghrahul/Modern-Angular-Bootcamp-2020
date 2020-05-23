@@ -1,0 +1,20 @@
+<div>
+    <table class="table is-stripped">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Word Count</th>
+            <th>Snippet</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let resultItem of resultList">
+                <td>
+                    <a target="_blank" [href] = " 'https://en.wikipedia.org?curid=' + resultItem.pageid ">
+                    {{resultItem.title}} </a> </td>
+                <td>{{resultItem.wordcount}}</td>
+                <td [innerHTML] = "resultItem.snippet"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

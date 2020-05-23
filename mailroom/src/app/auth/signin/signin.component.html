@@ -1,0 +1,16 @@
+<h3>Sign In</h3>
+<form (ngSubmit) ="onSubmit()" class="ui form" [formGroup] = "authForm">
+    <app-input inputType = "text" label= "User Name: " [control]= "authForm.get('username')"></app-input>
+    <app-input inputType = "password" label= "Password: " [control]= "authForm.get('password')"></app-input>
+    <div *ngIf = "authForm.errors" class="ui red basic label">
+    <p *ngIf = "authForm.errors.credentials">
+        Please enter correct username and password.
+    </p>
+    <p *ngIf = "authForm.errors.unknownError">
+        Whoops! Signup failed. Please try again later.
+    </p>
+    </div>
+    <div>
+        <button class="ui submit button primary">Submit</button>
+    </div>
+</form>

@@ -1,0 +1,4 @@
+<div class="container">
+    <button (click)= "imageRefresh()">Fetch New Photo!</button>
+</div>
+<img *ngIf = "imageUrl" [src] = "imageUrl" />
